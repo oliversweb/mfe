@@ -6,7 +6,7 @@ import App from './App';
 // Mount function to start up the app
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
   // If we are running in isolation/localhost we will use the browser history provided otherwise we will create a new memory history with an initial path
-  const history = defaultHistory || createMemoryHistory({
+  const history = defaultHistory || createMemoryHistory( {
     initialEntries: [initialPath],
   });
 
@@ -31,7 +31,7 @@ const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
 // If we are in development and in isolation,
 // call mount immediately
 if (process.env.NODE_ENV === 'development') {
-  const devRoot = document.querySelector('#_marketing-dev-root');
+  const devRoot = document.querySelector('#_auth-dev-root');
 
   if (devRoot) {
     mount(devRoot, { defaultHistory: createBrowserHistory() });
