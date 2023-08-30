@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) => ({
 export default ({ data }) => { 
   const classes = useStyles();
 
-  console.log('Footer data: ', data);
+  // console.log('Footer data: ', data);
   return (
     <React.Fragment>      
       <StylesProvider generateClassName={generateClassName}>

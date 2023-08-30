@@ -10,7 +10,7 @@ import Header from './components/Header';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
-//const FooterLazy = lazy(() => import('./components/FooterApp'));
+const FooterLazy = lazy(() => import('./components/FooterApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
@@ -27,7 +27,7 @@ export default () => {
               <Route path="/auth" component={AuthLazy} />
               <Route path="/" component={MarketingLazy} />
             </Switch>
-            {/* <FooterLazy /> */}
+            <FooterLazy />
           </Suspense>
         </div>
       </StylesProvider>

@@ -4,7 +4,7 @@ import App from './App';
 import { CONTENT_URL } from '../constants';
 
 const getData = async () => {
-    console.log(`Enviroment [${process.env.NODE_ENV}] Content url [${CONTENT_URL}]`);
+    // console.log(`Enviroment [${process.env.NODE_ENV}] Content url [${CONTENT_URL}]`);
     // let content = null; 
     // try {      
     //   let res = await fetch(CONTENT_URL);        
