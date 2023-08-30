@@ -4,8 +4,8 @@ import React, { useRef, useEffect } from 'react';
 export default () => {
   const ref = useRef(null);
 
-  useEffect(() => {
-    mount(ref.current);
+  useEffect(async () => {
+    await mount(ref.current);
   }, []);
 
   return <div ref={ref} />;
