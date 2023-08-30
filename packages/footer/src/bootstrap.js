@@ -19,9 +19,10 @@ const getData = async () => {
 
 // Mount function to start up the app
 const mount = async (el) => {
-  const footerContent = await getData();
-  console.log('Footer content: ', footerContent);
-  ReactDOM.render(<App data={footerContent} />, el);
+  //const footerContent = await getData();
+  //console.log('Footer content: ', footerContent);
+  //ReactDOM.render(<App data={footerContent} />, el);
+  ReactDOM.render(<App />, el);
 };
 
 // If we are in development and in isolation,
