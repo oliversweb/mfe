@@ -11,13 +11,13 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: 'auth',
+      name: 'footer',
       filename: 'remoteEntry.js',
       exposes: {
         './FooterApp': './src/bootstrap',
       },
       shared: packageJson.dependencies,
-    })
+    }),
   ],
 };
 
