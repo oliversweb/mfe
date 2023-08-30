@@ -8,13 +8,13 @@ const getData = async () => {
     let res = null;
     try {
       console.log(`Enviroment [${process.env.NODE_ENV}] Content filepath [${CONTENT_FILEPATH['uk']}] Content url [${CONTENT_URL}]`);
-      if (process.env.NODE_ENV !== 'development') {        
-        res = await fetch(CONTENT_FILEPATH['uk']);
+//      if (process.env.NODE_ENV !== 'development') {        
+        res = await fetch('./data/uk-footer.json');
         console.log(`Loaded local footer content`, res);
-      } else {
-        res = await fetch(CONTENT_URL);
-        console.log(`Loaded remote footer content`, res);
-      }
+      // } else {
+      //   res = await fetch(CONTENT_URL);
+      //   console.log(`Loaded remote footer content`, res);
+      // }
       content = await res.json();
     } catch (error) {
       throw new Error(`Unable to fetch footer content ${error.message}`, error);
