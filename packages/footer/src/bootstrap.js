@@ -6,17 +6,16 @@ import file from '../data/uk-footer.json';
 
 const getData = async () => {
     let content = null; 
-    let res = null;
     try {
       console.log(`Enviroment [${process.env.NODE_ENV}] Content filepath [${CONTENT_FILEPATH['uk']}] Content url [${CONTENT_URL}]`);
-//      if (process.env.NODE_ENV !== 'development') {        
-        res = file // await fetch('./data/uk-footer.json');
-        console.log(`Loaded local footer content`, res);
-      // } else {
-      //   res = await fetch(CONTENT_URL);
-      //   console.log(`Loaded remote footer content`, res);
-      // }
-      content = res // await res.json();
+      if (process.env.NODE_ENV !== 'development') {        
+        content = file
+        console.log(`Loaded local footer content`, content);
+      } else {
+        let res = await fetch(CONTENT_URL);        
+        content = await res.json();
+        console.log(`Loaded remote footer content`, content);
+      }
     } catch (error) {
       throw new Error(`Unable to fetch footer content ${error.message}`, error);
     }
