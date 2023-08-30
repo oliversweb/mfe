@@ -2,20 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { CONTENT_URL, CONTENT_FILEPATH } from '../constants';
+import file from '../data/uk-footer.json';
 
 const getData = async () => {
-    let content = null;
+    let content = null; 
     let res = null;
     try {
       console.log(`Enviroment [${process.env.NODE_ENV}] Content filepath [${CONTENT_FILEPATH['uk']}] Content url [${CONTENT_URL}]`);
 //      if (process.env.NODE_ENV !== 'development') {        
-        res = await fetch('./data/uk-footer.json');
+        res = file // await fetch('./data/uk-footer.json');
         console.log(`Loaded local footer content`, res);
       // } else {
       //   res = await fetch(CONTENT_URL);
       //   console.log(`Loaded remote footer content`, res);
       // }
-      content = await res.json();
+      content = res // await res.json();
     } catch (error) {
       throw new Error(`Unable to fetch footer content ${error.message}`, error);
     }
