@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { CONTENT_URL, CONTENT_FILEPATH } from '../constants';
-import file from '../data/uk-footer.json';
+import file from './data/uk-footer.json';
 
 const getData = async () => {
     let content = null; 
