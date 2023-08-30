@@ -2,16 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 
-const url = "http://localhost:9001/footer"
+const url = 'http://localhost:9001/footer';
+const filePath = '../data/uk-footer.json';
+
 const getData = async () => {
     let content = null;
+    let res = null;
     try {
-        const res = await fetch(url);
-        const response = await res.json();
-        console.log(`Loaded footer content for local`, response);
-        content = response;
+      console.log('Enviroment : ', process.env.NODE_ENV);
+      if (process.env.NODE_ENV !== 'development') {        
+        res = await fetch(filePath);
+        console.log(`Loaded local footer content`, res);
+      } else {
+        res = await fetch(url);
+        console.log(`Loaded remote footer content`, res);
+      }
+      content = await res.json();
     } catch (error) {
-        throw new Error(`Unable to fetch footer content ${error.message}`, error);
+      throw new Error(`Unable to fetch footer content ${error.message}`, error);
     }
 
     return content;
