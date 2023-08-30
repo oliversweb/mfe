@@ -1,20 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-
-const url = 'http://localhost:9001/footer';
-const filePath = '../data/uk-footer.json';
+import { CONTENT_URL, CONTENT_FILEPATH } from '../constants';
 
 const getData = async () => {
     let content = null;
     let res = null;
     try {
-      console.log('Enviroment : ', process.env.NODE_ENV);
+      console.log(`Enviroment [${process.env.NODE_ENV}] Content filepath [${CONTENT_FILEPATH['uk']}] Content url [${CONTENT_URL}]`);
       if (process.env.NODE_ENV !== 'development') {        
-        res = await fetch(filePath);
+        res = await fetch(CONTENT_FILEPATH['uk']);
         console.log(`Loaded local footer content`, res);
       } else {
-        res = await fetch(url);
+        res = await fetch(CONTENT_URL);
         console.log(`Loaded remote footer content`, res);
       }
       content = await res.json();
@@ -28,7 +26,7 @@ const getData = async () => {
 // Mount function to start up the app
 const mount = async (el) => {
   const footerContent = await getData();
-  
+  console.log('Footer content: ', footerContent);
   ReactDOM.render(<App data={footerContent} />, el);
 };
 

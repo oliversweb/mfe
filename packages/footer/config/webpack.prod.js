@@ -1,3 +1,5 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const path = require('path');
 const { merge } = require('webpack-merge');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 const packageJson = require('../package.json');
@@ -18,6 +20,14 @@ const prodConfig = {
       },
       shared: packageJson.dependencies,
     }),
+    new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, '../data'), // Source path of the data file
+            to: 'data', // Destination path within the build output directory
+          },
+        ],
+      }),
   ],
 };
 
