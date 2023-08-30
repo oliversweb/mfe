@@ -72,13 +72,13 @@ export default ({ data }) => {
           <Typography variant="h6" align="center" gutterBottom>
             ______________ Footer ______________
           </Typography>
-          <Typography variant="subtitle1" align="center" color="textSecondary" >          
+          {/* <Typography variant="subtitle1" align="center" color="textSecondary" >          
               <ul>
               {data.sections.map((item) => (
                 <li key={item.id}>link name: {item.name}</li>
               ))}
               </ul>            
-          </Typography>
+          </Typography> */}
           <Typography variant="h6" align="center" gutterBottom>
             ____________________________________
           </Typography>
