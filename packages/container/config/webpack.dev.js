@@ -22,6 +22,7 @@ const devConfig = {
                 auth: 'auth@http://localhost:8082/remoteEntry.js',
                 footer: 'footer@http://localhost:8085/remoteEntry.js',
                 banner: 'banner@http://localhost:8086/remoteEntry.js',
+                sfooter: 'sfooter@http://localhost:8087/remoteEntry.js',
             },
             shared: packageJson.dependencies,
         })

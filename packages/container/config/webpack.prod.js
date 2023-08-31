@@ -19,6 +19,7 @@ const prodConfig = {
                 auth: `auth@${domain}/auth/latest/remoteEntry.js`,
                 footer: `footer@${domain}/footer/latest/remoteEntry.js`,
                 banner: `banner@${domain}/banner/latest/remoteEntry.js`,
+                sfooter: `sfooter@${domain}/sfooter/latest/remoteEntry.js`,
             },
             shared: packageJson.dependencies,
         }),
