@@ -17,6 +17,7 @@ const prodConfig = {
             remotes: {
                 marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`,
                 auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+                dashboard: `dashboard@${domain}/auth/latest/remoteEntry.js`,
                 dynamicfooter: `dynamicfooter@${domain}/dynamicfooter/latest/remoteEntry.js`,
                 banner: `banner@${domain}/banner/latest/remoteEntry.js`,
                 staticfooter: `staticfooter@${domain}/staticfooter/latest/remoteEntry.js`,

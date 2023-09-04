@@ -18,8 +18,9 @@ const devConfig = {
         new ModuleFederationPlugin({
             name: 'container',
             remotes: {
-                marketing: 'marketing@http://localhost:8081/remoteEntry.js',
+                marketing: 'marketing@http://localhost:8081/remoteEntry.js',                
                 auth: 'auth@http://localhost:8082/remoteEntry.js',
+                dashboard: 'dashboard@http://localhost:8083/remoteEntry.js',
                 dynamicfooter: 'dynamicfooter@http://localhost:8085/remoteEntry.js',
                 banner: 'banner@http://localhost:8086/remoteEntry.js',
                 staticfooter: 'staticfooter@http://localhost:8087/remoteEntry.js',                
