@@ -78,8 +78,8 @@ export default function Album() {
               align="center"
               color="textPrimary"
               gutterBottom
-            >
-              Home Page
+            >              
+              Home Page (<code>MFE REACT</code>)
             </Typography>
             <Typography
               variant="h5"

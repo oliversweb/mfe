@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useState } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import {
   StylesProvider,
@@ -7,32 +7,39 @@ import {
 
 import Progress from './components/Progress';
 import Header from './components/Header';
-import SFooter from './components/SFooterApp';
+// import StaticFooter from './components/StaticFooterApp';
 
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
-// const FooterLazy = lazy(() => import('./components/FooterApp'));
-const BannerLazy = lazy(() => import('./components/BannerApp'));
+// const DynamicFooterLazy = lazy(() => import('./components/DynamicFooterApp'));
+// const BannerLazy = lazy(() => import('./components/BannerApp'));
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'co',
 });
 
 export default () => {
+  const [isSignedIn, setIsSignedIn] = useState(false);
+
   return (
     <BrowserRouter>
-      <StylesProvider generateClassName={generateClassName}>
+      <StylesProvider generateClassName={generateClassName}>        
         <div>
-          <Header />
+          <Header
+            onSignOut={() => setIsSignedIn(false)}
+            isSignedIn={isSignedIn}
+          />
           <Suspense fallback={<Progress />}>
             <Switch>
-              <Route path="/auth" component={AuthLazy} />
+              <Route path="/auth">
+                <AuthLazy onSignIn={() => setIsSignedIn(true)} />
+              </Route>
               <Route path="/" component={MarketingLazy} />
             </Switch>
-            {/* <FooterLazy /> */}
-            <BannerLazy />
-          </Suspense>
-          <SFooter />
+            {/* <DynamicFooterLazy /> */}
+            {/* <StaticFooter /> */}
+            {/* <BannerLazy /> */}
+          </Suspense>          
         </div>
       </StylesProvider>
     </BrowserRouter>

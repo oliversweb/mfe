@@ -4,7 +4,7 @@ const commonConfig = require('./webpack.common');
 const packageJson = require('../package.json');
 
 const devConfig = {
-    mode: 'development',
+    mode: 'development',    
     output: {
         publicPath: 'http://localhost:8080/',
     },
@@ -20,12 +20,12 @@ const devConfig = {
             remotes: {
                 marketing: 'marketing@http://localhost:8081/remoteEntry.js',
                 auth: 'auth@http://localhost:8082/remoteEntry.js',
-                footer: 'footer@http://localhost:8085/remoteEntry.js',
+                dynamicfooter: 'dynamicfooter@http://localhost:8085/remoteEntry.js',
                 banner: 'banner@http://localhost:8086/remoteEntry.js',
-                sfooter: 'sfooter@http://localhost:8087/remoteEntry.js',
+                staticfooter: 'staticfooter@http://localhost:8087/remoteEntry.js',                
             },
             shared: packageJson.dependencies,
-        })
+        })        
     ],
 };
 
