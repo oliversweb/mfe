@@ -79,7 +79,15 @@ export default function Album() {
               color="textPrimary"
               gutterBottom
             >              
-              Home Page (<code>MFE REACT</code>)
+              Home Page
+            </Typography>
+            <Typography
+              variant="h3"
+              align="center"
+              color="textSecondary"
+              paragraph
+            >
+               <code>MFE REACT</code>
             </Typography>
             <Typography
               variant="h5"
@@ -101,9 +109,9 @@ export default function Album() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link to="/pricing">
+                  <Link to="/dashboard">
                     <Button variant="outlined" color="primary">
-                      Pricing
+                      Dashboard
                     </Button>
                   </Link>
                 </Grid>
@@ -114,7 +122,7 @@ export default function Album() {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
+            {cards.slice(0, 3).map((card) => (
               <Grid item key={card} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia

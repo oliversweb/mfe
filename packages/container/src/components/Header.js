@@ -81,6 +81,13 @@ export default function Header({ isSignedIn, onSignOut }) {
           >
             App
           </Typography>
+          <Typography
+            variant="h6"
+            color="inherit"
+            noWrap
+          >
+            <code>HOST CONTAINER</code>  
+          </Typography>
           <Button
             color="primary"
             variant="outlined"

@@ -13,7 +13,7 @@ import Header from './components/Header';
 const MarketingLazy = lazy(() => import('./components/MarketingApp'));
 const AuthLazy = lazy(() => import('./components/AuthApp'));
 const DashboardLazy = lazy(() => import('./components/DashboardApp'));
-// const DynamicFooterLazy = lazy(() => import('./components/DynamicFooterApp'));
+const DynamicFooterLazy = lazy(() => import('./components/DynamicFooterApp'));
 // const BannerLazy = lazy(() => import('./components/BannerApp'));
 
 const generateClassName = createGenerateClassName({
@@ -50,7 +50,7 @@ export default () => {
               </Route>
               <Route path="/" component={MarketingLazy} />
             </Switch>
-            {/* <DynamicFooterLazy /> */}
+            <DynamicFooterLazy />
             {/* <StaticFooter /> */}
             {/* <BannerLazy /> */}
           </Suspense>          
