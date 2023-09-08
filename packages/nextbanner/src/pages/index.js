@@ -8,7 +8,7 @@ export async function getServerSideProps() {
     return { props : { footerContent: content  }}
 }
 
-export default function Footer({ footerContent }) {
+export default function NextBanner({ footerContent }) {
     const data = footerContent;
 
     return (<App data={data} />)

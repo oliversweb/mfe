@@ -77,6 +77,7 @@ export default function SignIn({ onSignIn }) {
             name="email"
             autoComplete="email"
             autoFocus
+            defaultValue="email@dot.com"
           />
           <TextField
             variant="outlined"
@@ -88,6 +89,7 @@ export default function SignIn({ onSignIn }) {
             type="password"
             id="password"
             autoComplete="current-password"
+            defaultValue="Pa55w0rd"
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
